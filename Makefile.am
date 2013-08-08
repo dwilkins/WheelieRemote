@@ -1,8 +1,10 @@
 bin_PROGRAMS=wheeliemote
 wheeliemote_SOURCES = src/main.c
-wheeliemote_CPPFLAGS = $(AM_CPPFLAGS) $(UDEV_CFLAGS) $(DBUS_CFLAGS)
+wheeliemote_CPPFLAGS = $(AM_CPPFLAGS) $(UDEV_CFLAGS) $(DBUS_CFLAGS) $(BLUEZ_CFLAGS) $(LIBXWIIMOTE_CFLAGS)
 wheeliemote_LDADD = -lxwiimote -lm -lbluetooth
-wheeliemote_LDFLAGS = $(AM_LDFLAGS) $(UDEV_LIBS) $(DBUS_LIBS)
+wheeliemote_LDFLAGS = $(AM_LDFLAGS) $(UDEV_LIBS) $(DBUS_LIBS) $(BLUEZ_LIBS) $(LIBXWIIMOTE_LIBS)
+
+ACLOCAL_AMFLAGS = -I m4
 
 AM_CFLAGS = \
 	-Wall \
